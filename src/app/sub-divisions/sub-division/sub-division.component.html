@@ -1,3 +1,51 @@
-<p>
-  sub-division works!
-</p>
+<div class="container">
+  
+  <div class="panel-body">
+       <a type="button" class="btn btn btn-primary" (click)="addSubDivision()">
+         <i class="fa fa-plus"></i>
+         Agregar nueva Sub Divisi&oacute;n
+       </a>
+       <a type="button" class="btn btn btn-default" (click)="goBack()">
+           << Regresar
+      </a>
+    </div>
+  <div class="panel panel-default">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>C&oacute;digo</th>
+            <th>Nombre</th>
+            <th>Categor&iacute;a</th>
+            <th>C&oacute;digo Alpha 2</th>
+            <th>ISO 3166-2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let subDivision of subDivisionsList">
+            <td>{{subDivision.code}}</td>
+            <td>{{subDivision.name}}</td>
+            <td>{{subDivision.Category.name}}</td>
+            <td>{{subDivision.alpha2Code}}</td>
+            <td>
+              <a  href="{{subDivision.linkToIsoCode}}" target="_blank" >{{subDivision.isoCode}}</a>
+            </td>
+            
+            <td>
+              <a  [routerLink]="[ '/sub-division/detail', subDivision.id ]" class="success">
+                <i class="fa fa-eye font-25 margin-lef-right-10"></i>
+              </a>
+              <a [routerLink]="[ '/sub-division/update', subDivision.id ]">
+                <i class="fa fa-edit font-25 margin-lef-right-10 info"></i>
+              </a>
+              <a [routerLink]="[ '/sub-division/delete', subDivision.id ]">
+                <i class="fa fa-trash font-25 margin-lef-right-10 danger"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+</div>

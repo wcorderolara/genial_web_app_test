@@ -1,3 +1,52 @@
-<p>
-  country works!
-</p>
+<div class="container">
+  
+  <div class="panel-body">
+       <a type="button" class="btn btn btn-primary" [routerLink]="[ '/country/add' ]">
+         <i class="fa fa-plus"></i>
+         Agregar nuevo Pa&iacute;s
+       </a>
+    </div>
+  <div class="panel panel-default">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>C&oacute;digo Alpha 2</th>
+            <th>C&oacute;digo Alpha 3</th>
+            <th>ISO 3166-2</th>
+            <th>Independiente</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of countriesList">
+            <td>{{country.name}}</td>
+            <td>{{country.alpha2Code}}</td>
+            <td>{{country.alpha3Code}}</td>
+            <td>
+              <a  href="{{country.linkToIsoCode}}" target="_blank" >{{country.isoCode}}</a>
+            </td>
+            <td  class="independent-{{country.independent}}">
+              {{ country.independent }}
+            </td>
+            <td>
+              <a  [routerLink]="[ '/country/detail', country.id ]" class="success">
+                <i class="fa fa-eye font-25 margin-lef-right-10"></i>
+              </a>
+              <a [routerLink]="[ '/country/update', country.id ]">
+                <i class="fa fa-edit font-25 margin-lef-right-10 info"></i>
+              </a>
+              <a [routerLink]="[ '/country/delete', country.id ]">
+                <i class="fa fa-trash font-25 margin-lef-right-10 danger"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+
+  
+  
+</div>

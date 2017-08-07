@@ -1,3 +1,36 @@
-<p>
-  country-detail works!
-</p>
+<div class="container">
+  
+  <a (click)="goBack()"><< Regresar</a>
+  
+  <div class="jumbotron margin-top-10">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>
+            {{selectedCountry.name}} ({{selectedCountry.alpha2Code}})
+            
+          </h1>
+        </div>
+        <div class="col-md-3">
+          <img class="img-responsive" src="{{selectedCountry.flag}}" alt="{{selectedCountry.name}}">
+        </div>
+      </div>
+      <p #descriptionContainer>
+      
+      <div class="row">
+        <div class="col-md-3">
+          <p>
+            <a class="btn btn-primary btn-lg ">Conocer m&aacute;s</a>
+          </p>
+        </div>
+        <div class="col-md-3">
+          <p>
+            <a class="btn btn-success btn-lg" (click)="viewDetails()">Ver Sub Divisiones</a>
+          </p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+</div>

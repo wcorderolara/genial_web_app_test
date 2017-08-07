@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CountryComponent } from './country/country.component';
 import { CreateCountryComponent } from './create-country/create-country.component';
-import { DetailCountryComponent } from './detail-country/detail-country.component';
+import { CountryDetailComponent } from './country-detail/country-detail.component';
 import { UpdateCountryComponent } from './update-country/update-country.component';
 import { DeleteCountryComponent } from './delete-country/delete-country.component';
 import { AddCountryInfoComponent } from './add-country-info/add-country-info.component';
@@ -11,7 +11,7 @@ import { UpdateCountryInfoComponent } from './update-country-info/update-country
 
 const routes: Routes = [
   {
-    path: 'countryies',
+    path: 'countries',
     component: CountryComponent
   },
   {
@@ -20,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'country/detail/:id',
-    component: DetailCountryComponent
+    component: CountryDetailComponent
   },
   {
     path: 'country/update/:id',

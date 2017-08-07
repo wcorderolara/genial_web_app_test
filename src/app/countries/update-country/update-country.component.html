@@ -1,3 +1,79 @@
-<p>
-  update-country works!
-</p>
+<div class="container">
+  
+  <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Actualizar Datos</h3>
+      </div>
+      <div class="panel-body">
+        <form role="form" #updateCountryForm="ngForm" (ngSubmit)="onUpdate()" enctype="multipart/form-data">
+          
+          <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="flag">Bandera</label>
+                    <input type="file"
+                        (change)="onChange($event)">
+                </div>
+            </div>
+            <div class="col-md-4" >
+                <img src="{{selectedCountry.flag}}" class="img-responsive img-thumbnail">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" name="name" class="form-control"
+                   placeholder="Nombre Pais" #name="ngModel" id="name"
+                   [(ngModel)] = "selectedCountry.name" #spy required>
+          </div>
+          <div [hidden]="name.valid || name.pristine || name.untouched"
+              class="alert alert-danger">
+              El Nombre del Pa&iacute;s es Requerido!!
+          </div>
+
+          <div class="form-group">
+            <label for="alphaCode2" >C&oacute;digo Alpha 2</label>
+            <input type="text" name="alphaCode2" class="form-control" id="alphaCode2"
+                   placeholder="Codigo Alpha 2" #alphaCode2="ngModel"
+                   [(ngModel)] = "selectedCountry.alpha2Code" #spy required>
+          </div>
+          <div [hidden]="alphaCode2.valid || alphaCode2.pristine || alphaCode2.untouched"
+              class="alert alert-danger">
+              El C&oacute;digo Alpha 2 es Requerido!!
+          </div>
+
+          <div class="form-group">
+            <label for="alphaCode3">C&oacute;digo Alpha 3</label>
+            <input type="text" name="alphaCode3" class="form-control" id="alphaCode3"
+                   placeholder="Codigo Alpha 3" #alphaCode3="ngModel" 
+                   [(ngModel)]="selectedCountry.alpha3Code">
+          </div>
+          <div class="form-group">
+            <label for="isoCode">ISO 3166-2</label>
+            <input type="text" name="isoCode" class="form-control" id="isoCode"
+                   placeholder="Codigo ISO 3166-2" #isoCode="ngModel"
+                   [(ngModel)]="selectedCountry.isoCode"> 
+          </div>
+          <div class="form-group">
+            <label for="linkIsoCode">Link ISO 3166-2</label>
+            <input type="text" name="linkIsoCode" class="form-control" id="linkIsoCode"
+                   placeholder="Link de Referencia para Codigo ISO" #linkIsoCode="ngModel"
+                   [(ngModel)]="selectedCountry.linkToIsoCode">
+          </div>
+          <!--<div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" name="name" #name="ngModel"
+                   [(ngModel)]="selectedCountry.name">
+          </div>-->
+          <button type="submit" class="btn btn-primary"
+                [disabled]="!updateCountryForm.form.valid">
+                Actualizar Pa&iacute;s
+          </button>
+          <a class="btn btn-default" (click)="goBack()">
+                Cancelar
+          </a>
+        </form>
+      </div>
+  </div>
+  <simple-notifications [options]="options"></simple-notifications>
+</div>

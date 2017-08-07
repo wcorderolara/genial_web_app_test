@@ -1,3 +1,5 @@
+import { Info } from '../info';
+
 export class Country {
     id?:number;
     name:string;
@@ -10,4 +12,5 @@ export class Country {
     status?:number;
     createdAt?:string;
     updatedAt?:string;
+    Infos?:Info[];
 }

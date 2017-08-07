@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { SimpleNotificationsModule } from 'angular2-notifications';
 
 import { CountriesRoutingModule } from './countries-routing.module';
 import { CountryComponent } from './country/country.component';
-import { DetailCountryComponent } from './detail-country/detail-country.component';
 import { CreateCountryComponent } from './create-country/create-country.component';
 import { UpdateCountryComponent } from './update-country/update-country.component';
 import { DeleteCountryComponent } from './delete-country/delete-country.component';
@@ -20,10 +20,14 @@ import { CountryDetailComponent } from './country-detail/country-detail.componen
 @NgModule({
   imports: [
     CommonModule,
-    CountriesRoutingModule
+    CountriesRoutingModule,
+    FormsModule,
+    HttpModule,
+    SimpleNotificationsModule.forRoot(),
+    RouterModule
+    
   ],
   declarations: [CountryComponent, 
-          DetailCountryComponent, 
           CreateCountryComponent, 
           UpdateCountryComponent, 
           DeleteCountryComponent, 

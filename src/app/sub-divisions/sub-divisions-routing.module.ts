@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { SubDivisionComponent } from './sub-division/sub-division.component';
 import { CreateSubDivisionComponent } from './create-sub-division/create-sub-division.component';
-import { DetailSubDivisionComponent } from './detail-sub-division/detail-sub-division.component';
+import { SubDivisionDetailComponent } from './sub-division-detail/sub-division-detail.component';
 import { UpdateSubDivisionComponent } from './update-sub-division/update-sub-division.component';
 import { DeleteSubDivisionComponent } from './delete-sub-division/delete-sub-division.component';
 import { AddSubDivisionInfoComponent } from './add-sub-division-info/add-sub-division-info.component';
@@ -15,12 +15,12 @@ const routes: Routes = [
     component: SubDivisionComponent
   },
   {
-    path: 'sub-division/create',
+    path: 'sub-division/create/:countryName/:idCountry',
     component: CreateSubDivisionComponent
   },
   {
     path: 'sub-division/detail/:id',
-    component: DetailSubDivisionComponent
+    component: SubDivisionDetailComponent
   },
   {
     path: 'sub-division/update/:id',

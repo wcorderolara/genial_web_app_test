@@ -1,4 +1,3 @@
-import * as path from 'path';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 

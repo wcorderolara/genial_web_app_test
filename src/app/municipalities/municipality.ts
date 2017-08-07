@@ -1,3 +1,6 @@
+import { Info } from '../info';
+import { SubDivision } from '../sub-divisions/sub-division';
+
 export class Municipality {
     id?:number;
     name:string;
@@ -6,4 +9,6 @@ export class Municipality {
     createdAt?:string;
     updatedAt?:string;
     SubDivisionId:number;
+    Info?:Info[];
+    SubDivision?:SubDivision[];
 }

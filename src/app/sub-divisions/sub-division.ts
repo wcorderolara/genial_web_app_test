@@ -1,4 +1,8 @@
-export class SubDivision {
+import { Info } from '../info';
+import { Country } from '../countries/country';
+import { Category } from '../categories/category';
+
+export class SubDivision {    
     id?:number;
     name:string;
     code?:string;
@@ -9,6 +13,9 @@ export class SubDivision {
     status?:number;
     createdAt?:string;
     updatedAt?:string;
-    CategoryId:number;
+    CategoryId:3;
     CountryId:number;
+    Infos?:Info[];
+    Category?:Category;
+    Country?:Country;
 }
